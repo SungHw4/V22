@@ -15,8 +15,34 @@ public class CreateAccount : Controller
     {
         var response = new PkCreateAccountResponse {Result = ErrorCode.None};
 
-        //var saltValue;
+        var saltValue = Database.SaltString();
+        var hashingPassword = Database.MakeHashingPassWord(saltValue, request.PW);
         
+        using (var connection = await Database.GetAccountDbConnection())
+        {
+            try
+            {
+                var count = await connection.ExecuteAsync(@"INSERT Users(ID,PW,NickName, Salt) Values(@id, @pw, @nickname, @salt)",
+                    new
+                    {
+                        id = request.ID,
+                        pw = hashingPassword,
+                        nickname = request.NickName,
+                        salt = saltValue
+                    });
+                if(count != 1)
+                {
+                    response.Result = ErrorCode.Create_Account_Fail_Duplicate;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                response.Result = ErrorCode.Create_Account_Fail_Exception;
+                return response;
+            }
+        }
+
         return response;
     }
 }

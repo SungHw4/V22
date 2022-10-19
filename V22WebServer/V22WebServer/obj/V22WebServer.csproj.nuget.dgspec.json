@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj": {}
+    "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj": {}
   },
   "projects": {
-    "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj": {
+    "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj",
+        "projectUniqueName": "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj",
         "projectName": "V22WebServer",
-        "projectPath": "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj",
-        "packagesPath": "C:\\Users\\한영인\\.nuget\\packages\\",
-        "outputPath": "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\obj\\",
+        "projectPath": "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj",
+        "packagesPath": "C:\\Users\\gksdu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\한영인\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gksdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

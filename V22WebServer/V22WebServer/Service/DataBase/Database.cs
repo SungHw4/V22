@@ -19,7 +19,7 @@ public class Database : IDatabase
         DataBaseConnectionString = address;
     }
 
-    public async Task<MySqlConnection> GetAccountDbConnection()
+    public static async Task<MySqlConnection> GetAccountDbConnection()
     {
         return await GetOpenMySqlConnection(DataBaseConnectionString);
     }
@@ -31,6 +31,19 @@ public class Database : IDatabase
         return connection;
     }
     
+    public static string SaltString()
+    {
+
+        const string allowableCharacters = "abcdefghijklmnopqrstuvwxyz0123456789";
+        var bytes = new byte[64];
+        using(var random = RandomNumberGenerator.Create())
+        {
+            random.GetBytes(bytes);
+        }
+
+        return new string(bytes.Select(x => allowableCharacters[x % allowableCharacters.Length]).ToArray());
+    }
+
     public  static string MakeHashingPassWord(string saltValue, string pw)
     {
         var sha = new SHA256Managed();
