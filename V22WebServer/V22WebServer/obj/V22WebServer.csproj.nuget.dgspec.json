@@ -60,10 +60,6 @@
               "target": "Package",
               "version": "[13.0.2-beta2, )"
             },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.2.3, )"
-            },
             "ZLogger": {
               "target": "Package",
               "version": "[1.6.2, )"
