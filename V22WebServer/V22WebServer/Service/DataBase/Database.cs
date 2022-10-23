@@ -6,9 +6,10 @@ using Microsoft.Extensions.Configuration;
 using MySqlConnector;
 namespace V22WebServer.Service.Database;
 
-public class Database : IDatabase
+public class Database //: IDatabase
 {
-    static string DataBaseConnectionString;
+    private static string DataBaseConnectionString;
+    private static Dictionary<string, string> DBConnDic;
     static string RedisAddress;
 
     public static RedisConnection RedisConn { get; set; }
@@ -19,12 +20,12 @@ public class Database : IDatabase
         DataBaseConnectionString = address;
     }
 
-    public async Task<MySqlConnection> GetAccountDbConnection()
+    public static async Task<MySqlConnection> GetAccountDbConnection()
     {
         return await GetOpenMySqlConnection(DataBaseConnectionString);
     }
     
-    public async Task<MySqlConnection> GetOpenMySqlConnection(string connectionString) 
+    static async Task<MySqlConnection> GetOpenMySqlConnection(string connectionString) 
     {
         var connection = new MySqlConnection(connectionString);
         await connection.OpenAsync();

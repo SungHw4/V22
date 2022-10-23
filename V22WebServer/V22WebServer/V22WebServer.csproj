@@ -8,10 +8,16 @@
 
     <ItemGroup>
         <PackageReference Include="CloudStructures" Version="3.2.0" />
+        <PackageReference Include="CsvHelper" Version="29.0.0" />
         <PackageReference Include="Dapper" Version="2.0.123" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.8" />
         <PackageReference Include="MySqlConnector" Version="2.2.0-rc.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
+        <PackageReference Include="StackExchange.Redis" Version="2.6.70" />
+        <PackageReference Include="StackExchange.Redis.Extensions" Version="1.0.1" />
+        <PackageReference Include="StackExchange.Redis.Extensions.Core" Version="8.0.5" />
+        <PackageReference Include="StackExchange.Redis.Extensions.Newtonsoft" Version="8.0.5" />
+        <PackageReference Include="StackExchange.Redis.Extensions.Utf8Json" Version="8.0.5" />
         <PackageReference Include="ZLogger" Version="1.6.2" />
     </ItemGroup>
 
