@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj": {}
+    "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj": {
+    "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj",
+        "projectUniqueName": "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj",
         "projectName": "V22WebServer",
-        "projectPath": "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj",
-        "packagesPath": "C:\\Users\\gksdu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gksdu\\Documents\\GitHub\\V22\\V22WebServer\\V22WebServer\\obj\\",
+        "projectPath": "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\V22WebServer.csproj",
+        "packagesPath": "C:\\Users\\한영인\\.nuget\\packages\\",
+        "outputPath": "E:\\Com2us\\V22\\V22WebServer\\V22WebServer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gksdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\한영인\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,6 +44,10 @@
               "target": "Package",
               "version": "[3.2.0, )"
             },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[29.0.0, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.0.123, )"
@@ -62,6 +63,26 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2-beta2, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.6.70, )"
+            },
+            "StackExchange.Redis.Extensions": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "StackExchange.Redis.Extensions.Core": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "StackExchange.Redis.Extensions.Newtonsoft": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "StackExchange.Redis.Extensions.Utf8Json": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             },
             "ZLogger": {
               "target": "Package",
@@ -87,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
