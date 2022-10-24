@@ -9,12 +9,13 @@ public class CSVBase
 {
     public delegate bool Func();
 
-    public bool Excute(CsvReader csv, Func func)
+    public bool Execute(CsvReader csv, Func func)
     {
         Int32 count = 0;
 
         while (csv.Read())
         {
+            
             if (count == 0)
                 csv.GetRecord<dynamic>();
            

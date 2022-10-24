@@ -45,12 +45,12 @@ public class Redis
         var redis = new RedisString<PlayerInfo>(_redisConn,key,TimeLimits);
     }
     
-    public static void CallCommand(PlayerInfo Player, RedisString<PlayerInfo> redis)
-    {
-        var player = Player;
-        await redis.SetAsync(player);
-        var result = await redis.GetAsync();
-    }
+    // public static void CallCommand(PlayerInfo Player, RedisString<PlayerInfo> redis)
+    // {
+    //     var player = Player;
+    //     await redis.SetAsync(player);
+    //     var result = await redis.GetAsync();
+    // }
     
     
 }
