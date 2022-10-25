@@ -8,10 +8,11 @@ namespace V22WebServer.CSVRead;
 
 public class USER_INFO_READ : CSVBase
 {
-    public Int64 user_id;
+    public string ID;
     public string Nickname;
-    public int Token;
-    public int PW;
+    public string AuthToken;
+    public string Salt;
+    public string PW;
     public DateTime Last_Conn;
 
 
@@ -31,23 +32,24 @@ public class USER_INFO_READ : CSVBase
 
             Int32 idx = 0;
             var tuple = new USER_INFO_READ();
-            tuple.user_id = obj.GetField<Int64>(idx++);
+            tuple.ID = obj.GetField<string>(idx++);
             tuple.Nickname = obj.GetField<string>(idx++);
-            tuple.Token = obj.GetField<int>(idx++);
-            tuple.PW = obj.GetField<int>(idx++);
+            tuple.AuthToken = obj.GetField<string>(idx++);
+            tuple.Salt = obj.GetField<string>(idx++);
+            tuple.PW = obj.GetField<string>(idx++);
             tuple.Last_Conn = obj.GetField<DateTime>(idx++);
 
 
 
-            TableMap<Int64, USER_INFO_READ>.GetInstance.InsertRow(tuple.user_id, tuple);
+            TableMap<string, USER_INFO_READ>.GetInstance.InsertRow(tuple.ID, tuple);
             return true;
         });
     }
 
 
-    public static TableMap<Int64, USER_INFO_READ> Instance
+    public static TableMap<string, USER_INFO_READ> Instance
     {
-        get { return TableMap<Int64, USER_INFO_READ>.GetInstance; }
+        get { return TableMap<string, USER_INFO_READ>.GetInstance; }
     }
 }
 //     public async Task<bool> UpdateDB()

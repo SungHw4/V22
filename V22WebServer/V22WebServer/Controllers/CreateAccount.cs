@@ -44,11 +44,6 @@ public class CreateAccount : Controller
             catch(Exception e)
             {
                 Console.WriteLine(e.ToString());
-                // Console.WriteLine(request.ID);
-                // Console.WriteLine(hashingPassword);
-                // Console.WriteLine(request.NickName);
-                // Console.WriteLine(saltValue);
-                // Console.WriteLine(ConnectDay);
                 response.Result = ErrorCode.Create_Account_Fail_Exception;
                 return response;
             }

@@ -1,14 +1,3 @@
-POST http://localhost:7123/CreateAccount
-Content-Type: application/json
-
-{
-    "ID": "younginyoungin",
-    "PW": "youngni33",
-    "Nickname": "koryasking"
-}
-
-###
-
 POST http://localhost:5123/Login
 Content-Type: application/json
 
@@ -25,4 +14,13 @@ Content-Type: application/json
   "ID": "younginyoungin",
   "PW": "youngni33",
   "Nickname": "koryasking"
+}
+
+###
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
 }

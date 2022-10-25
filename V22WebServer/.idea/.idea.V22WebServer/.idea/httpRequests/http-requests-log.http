@@ -1,3 +1,122 @@
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T060909.200.json
+
+###
+
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T060858.200.json
+
+###
+
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T060828.200.json
+
+###
+
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T060735.200.json
+
+###
+
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T060618.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+###
+
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T060526.200.json
+
+###
+
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T060418.200.json
+
+###
+
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T060111.200.json
+
+###
+
+POST http://localhost:5123/GetPlayerInventory
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "AuthToken": "w051089tiogqzv81q9i4xdrdi"
+}
+
+<> 2022-10-26T055845.200.json
+
+###
+
 POST http://localhost:5123/Login
 Content-Type: application/json
 
