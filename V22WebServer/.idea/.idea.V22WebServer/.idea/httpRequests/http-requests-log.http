@@ -6,6 +6,18 @@ Content-Type: application/json
     "PW": "youngni33"
 }
 
+<> 2022-10-26T052215.200.json
+
+###
+
+POST http://localhost:5123/Login
+Content-Type: application/json
+
+{
+    "ID": "younginyoungin",
+    "PW": "youngni33"
+}
+
 <> 2022-10-26T015913.200.json
 
 ###

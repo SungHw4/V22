@@ -194,3 +194,10 @@ Hosting environment: Development
 Content root path: E:\Com2us\V22\V22WebServer\V22WebServer\
 [Request Login] ID:younginyoungin, PW:youngni33
 Application is shutting down...
+Now listening on: https://localhost:7123
+Now listening on: http://localhost:5123
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: E:\Com2us\V22\V22WebServer\V22WebServer\
+[Request Login] ID:younginyoungin, PW:youngni33
+Application is shutting down...

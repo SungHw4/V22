@@ -20,7 +20,22 @@ public class GetPlayerInfo : Controller
     public async Task<PkGetPlayerInfoResponse> Post(PkLoginRequest request)
     {
         var response = new PkGetPlayerInfoResponse {Result = ErrorCode.None};
-        
+
+        using (var connection = await Database.GetAccountDbConnection())
+        {
+            try
+            {
+                //var count = await connection.ExecuteAsync()
+                
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                response.Result = ErrorCode.Get_PlayerInfo_Fail;
+                return response;
+            }
+        }
         
         return response;    
     }
