@@ -13,7 +13,7 @@ using V22WebServer.Service.Redis;
 namespace V22WebServer.Controllers;
 
 [ApiController]
-[Route("[controller")]
+[Route("[controller]")]
 
 public class LoginController
 {

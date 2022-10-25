@@ -1,0 +1,18 @@
+POST http://localhost:7123/CreateAccount
+Content-Type: application/json
+
+{
+    "ID": "younginyoungin",
+    "PW": "youngni33",
+    "Nickname": "koryasking",
+}
+
+###
+
+POST http://localhost:5221/Login
+Content-Type: application/json
+
+{
+    ID": "younginyoungin",
+    PW": "youngni33"
+}

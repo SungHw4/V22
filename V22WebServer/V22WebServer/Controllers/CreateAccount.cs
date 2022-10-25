@@ -7,7 +7,7 @@ using V22WebServer.Service.Database;
 namespace V22WebServer.Controllers;
 
 [ApiController]
-[Route("[controller")]
+[Route("[controller]")]
 public class CreateAccount : Controller
 {
     [HttpPost]
