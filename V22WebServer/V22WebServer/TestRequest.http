@@ -4,15 +4,25 @@ Content-Type: application/json
 {
     "ID": "younginyoungin",
     "PW": "youngni33",
-    "Nickname": "koryasking",
+    "Nickname": "koryasking"
 }
 
 ###
 
-POST http://localhost:5221/Login
+POST http://localhost:5123/Login
 Content-Type: application/json
 
 {
-    ID": "younginyoungin",
-    PW": "youngni33"
+    "ID": "younginyoungin",
+    "PW": "youngni33"
+}
+
+###
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
 }

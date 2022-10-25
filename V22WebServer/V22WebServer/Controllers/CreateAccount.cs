@@ -17,18 +17,20 @@ public class CreateAccount : Controller
 
         var saltValue = Database.SaltString();
         var hashingPassword = Database.MakeHashingPassWord(saltValue, request.PW);
-        
+        var ConnectDay = DateTime.Now;
         using (var connection = await Database.GetAccountDbConnection())
         {
             try
             {
-                var count = await connection.ExecuteAsync(@"INSERT Users(ID,PW,NickName, Salt) Values(@id, @pw, @nickname, @salt)",
+                var count = await connection.ExecuteAsync(@"INSERT Users(ID,PW,NickName, Salt, Last_Conn) Values(@id, @pw, @nickname, @salt, @LastConn)",
                     new
                     {
                         id = request.ID,
                         pw = hashingPassword,
                         nickname = request.NickName,
-                        salt = saltValue
+                        salt = saltValue,
+                        LastConn = ConnectDay
+                        
                     });
                 if(count != 1)
                 {
@@ -38,6 +40,11 @@ public class CreateAccount : Controller
             catch(Exception e)
             {
                 Console.WriteLine(e.ToString());
+                Console.WriteLine(request.ID);
+                Console.WriteLine(hashingPassword);
+                Console.WriteLine(request.NickName);
+                Console.WriteLine(saltValue);
+                Console.WriteLine(ConnectDay);
                 response.Result = ErrorCode.Create_Account_Fail_Exception;
                 return response;
             }

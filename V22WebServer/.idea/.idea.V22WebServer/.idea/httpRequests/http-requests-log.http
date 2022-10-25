@@ -1,0 +1,184 @@
+POST http://localhost:5123/Login
+Content-Type: application/json
+
+{
+    "ID": "younginyoungin",
+    "PW": "youngni33"
+}
+
+<> 2022-10-26T001123.500.txt
+
+###
+
+POST http://localhost:5123/Login
+Content-Type: application/json
+
+{
+    "ID": "younginyoungin",
+    "PW": "youngni33"
+}
+
+<> 2022-10-25T233809.500.txt
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T233611.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T233451.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T233427.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T233348.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T232926.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T231517.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T231410.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T231028.200.json
+
+###
+
+POST http://localhost:5123/CreateAccount
+Content-Type: application/json
+
+{
+  "ID": "younginyoungin",
+  "PW": "youngni33",
+  "Nickname": "koryasking"
+}
+
+<> 2022-10-25T230811.500.txt
+
+###
+
+POST http://localhost:7123/Login
+Content-Type: application/json
+
+{
+    "ID": "younginyoungin",
+    "PW": "youngni33"
+}
+
+###
+
+POST http://localhost:7123/CreateAccount
+Content-Type: application/json
+
+{
+    "ID": "younginyoungin",
+    "PW": "youngni33",
+    "Nickname": "koryasking"
+}
+
+###
+
+POST http://localhost:7123/CreateAccount
+Content-Type: application/json
+
+{
+    "ID": "younginyoungin",
+    "PW": "youngni33",
+    "Nickname": "koryasking"
+}
+
+###
+
+POST http://localhost:7123/CreateAccount
+Content-Type: application/json
+
+{
+    "ID": "younginyoungin",
+    "PW": "youngni33",
+    "Nickname": "koryasking"
+}
+
+###
+

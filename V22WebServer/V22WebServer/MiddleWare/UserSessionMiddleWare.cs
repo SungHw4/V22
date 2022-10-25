@@ -12,7 +12,7 @@ namespace V22WebServer.MiddleWare;
 
 public class UserSessionMiddleWare
 {
-    ILogger Logger;
+    //ILogger Logger;
     private readonly RequestDelegate _next;
 
     public UserSessionMiddleWare(RequestDelegate next, ILoggerFactory loggerFactory)
