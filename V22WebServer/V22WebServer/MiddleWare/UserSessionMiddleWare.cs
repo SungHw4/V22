@@ -22,7 +22,7 @@ public class UserSessionMiddleWare
 
     public async Task InvokeAsync(HttpContext context)
     {
-        if(context.Request.Path == "/Login")
+        if(context.Request.Path != "/Login" && context.Request.Path != "/CreateAccount")
         {
             StreamReader bodystream = new StreamReader(context.Request.Body, Encoding.UTF8);
             string body = bodystream.ReadToEndAsync().Result;

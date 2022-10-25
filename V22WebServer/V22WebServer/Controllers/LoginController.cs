@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Dapper;
 using CloudStructures.Structures;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,25 +12,25 @@ namespace V22WebServer.Controllers;
 [ApiController]
 [Route("[controller]")]
 
-public class LoginController
+public class LoginController : Controller
 {
     readonly ILogger Logger;
     private IMemoryCache MemoryCache;
 
-    public LoginController(ILogger<LoginController> logger, IMemoryCache memoryCache)
+    public LoginController(ILogger<LoginController> logger)
     {
         Logger = logger;
-        MemoryCache = memoryCache;
+        //MemoryCache = memoryCache;
     }
 
     [HttpPost]
     public async Task<PkLoginResponse> Post(PkLoginRequest request)
     {
         Logger.ZLogInformation($"[Request Login] ID:{request.ID}, PW:{request.PW}");
-
+        
         var response = new PkLoginResponse();
         response.Result = ErrorCode.None;
-
+        
         string tokenValue = Database.AuthToken();
         var idDefaultExpiry = TimeSpan.FromDays(1);
         var redisId = new RedisString<string>(Redis._redisConn, request.ID, idDefaultExpiry);
