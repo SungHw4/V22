@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using CloudStructures;
-using System.Threading.Tasks;
+﻿using CloudStructures;
 using CloudStructures.Structures;
-using StackExchange.Redis;
-using StackExchange.Redis.Extensions.Core;
-//using StackExchange.Redis.Extensions;
-using StackExchange.Redis.Extensions.Utf8Json;
-using StackExchange.Redis.Extensions.Newtonsoft;
+
 
 namespace V22WebServer.Service.Redis;
 
@@ -30,19 +21,28 @@ public class Redis
         }
     }
 
-    public class PlayerInfo
+    public class DBUserInfo
     {
-        public Int64 user_id;
-        public string Nickname;
-        public int Token;
-        public int PW;
-        public DateTime Last_Conn;
+        public string ID { get; set; }
+        public string PW { get; set; }
+        public string NickName { get; set; }
+        public string Salt { get; set; }
+        public DateTime Last_Conn { get; set; }
+        public string AuthToken { get; set; }
     }
-    public static void CreateRedisStructure(string Key)
+    public static void CreateRedisString(string Key, string value)
     {
         var key = Key;
         var TimeLimits = TimeSpan.FromDays(1);
-        var redis = new RedisString<PlayerInfo>(_redisConn,key,TimeLimits);
+        var redis = new RedisString<string>(_redisConn,key,TimeLimits);
+        redis.SetAsync(value);
+    }
+
+    public static void CreateRedisStructure(DBUserInfo player, string Key)
+    {
+        var TimeLimits = TimeSpan.FromDays(1);
+        var redis = new RedisString<DBUserInfo>(_redisConn,Key,TimeLimits);
+        redis.SetAsync(player);
     }
     
     // public static void CallCommand(PlayerInfo Player, RedisString<PlayerInfo> redis)

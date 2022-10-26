@@ -1,12 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
+﻿using System.Text;
+using CloudStructures.Structures;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using ZLogger;
+using V22WebServer.Service.Redis;
 
 namespace V22WebServer.MiddleWare;
 
@@ -30,11 +26,25 @@ public class UserSessionMiddleWare
             var obj = (JObject)JsonConvert.DeserializeObject(body);
 
             var userID = (string)obj["ID"];
+            var AuthToken = (string)obj["AuthToken"];
             if(string.IsNullOrEmpty(userID))
             {
                 return;
             }
-
+            else if(string.IsNullOrEmpty(AuthToken))
+            {
+                return;
+            }
+            var result = new RedisString<string>(Redis._redisConn, userID, null);
+            var RedisToken = await result.GetAsync();
+            if (RedisToken.ToString() != AuthToken)
+            {
+                Console.WriteLine("Diff Token");
+                Console.WriteLine(AuthToken);
+                Console.WriteLine(RedisToken.ToString());
+                return;
+            }
+            
             context.Request.Body = new MemoryStream(Encoding.UTF8.GetBytes(body));
 
         }

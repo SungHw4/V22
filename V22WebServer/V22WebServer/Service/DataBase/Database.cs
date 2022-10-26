@@ -1,18 +1,14 @@
-﻿using CloudStructures;
-using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
-using Microsoft.Extensions.Configuration;
 using MySqlConnector;
 namespace V22WebServer.Service.Database;
 
-public class Database //: IDatabase
+public class Database
 {
     private static string DataBaseConnectionString;
     private static Dictionary<string, string> DBConnDic;
-    static string RedisAddress;
-
-    public static RedisConnection RedisConn { get; set; }
+    //static string RedisAddress;
+    
     
     public static void Init(string address)
     {

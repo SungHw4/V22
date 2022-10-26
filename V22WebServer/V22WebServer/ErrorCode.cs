@@ -10,7 +10,7 @@ public enum ErrorCode : int
     Login_Fail_NotUser = 16,
     Login_Fail_PW = 17,
     Login_Fail_Update = 18,
-    Get_PlayerInfo_Fail = 19,
+    Login_Fail_Update_Inventory = 19,
     
     GET_Inventory_Create = 20,
     GET_Inventory_Fail = 21

@@ -1,8 +1,6 @@
 ﻿using Dapper;
 using CloudStructures.Structures;
-using CsvHelper.Expressions;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Caching.Memory;
 using ZLogger;
 using V22WebServer.Service.Database;
@@ -21,7 +19,6 @@ public class LoginController : Controller
     public LoginController(ILogger<LoginController> logger)
     {
         Logger = logger;
-        //MemoryCache = memoryCache;
     }
 
     [HttpPost]
@@ -36,15 +33,22 @@ public class LoginController : Controller
         {
             try
             {
-                var user = await connection.QueryFirstOrDefaultAsync<DBUserInfo>(@"SELECT ID,PW,NickName,Salt FROM users where ID=@ID",
+                var user = await connection.QueryFirstOrDefaultAsync<DBUserInfo>(@"SELECT ID,PW,NickName,Salt,Last_Conn,AuthToken FROM users where ID=@ID",
                     new {ID = request.ID});
+                if(user.ID == null)
+                {
+                    response.Result = ErrorCode.Login_Fail_NotUser;
+                    return response;
+                }
                 if (user.PW == Database.MakeHashingPassWord(user.Salt, request.PW))
                 {
                     string tokenValue = Database.AuthToken();
                     var idDefaultExpiry = TimeSpan.FromDays(1);
-                    var redisId = new RedisString<string>(Redis._redisConn, request.ID, idDefaultExpiry);
-                    await redisId.SetAsync(tokenValue);
-        
+                    //var redisId = new RedisString<string>(Redis._redisConn, request.ID, idDefaultExpiry);
+                    Redis.CreateRedisString(request.ID, tokenValue);
+                    
+                    //await redisId.SetAsync(tokenValue);
+                    
                     response.AuthToken = tokenValue;
                     
                     user.AuthToken = tokenValue;
@@ -52,12 +56,21 @@ public class LoginController : Controller
                     var count = await connection.ExecuteAsync(
                         "UPDATE users SET AuthToken = @AuthToken, Last_Conn = @Last_Conn WHERE ID = @ID",
                         user);
+                    
                     if (count != 1)
                     {
                         response.Result = ErrorCode.Login_Fail_Update;
                         
                     }
-
+                    count = await connection.ExecuteAsync(
+                        "UPDATE inventory SET AuthToken = @AuthToken WHERE ID = @ID",
+                        new {AuthToken = user.AuthToken, ID = request.ID});
+                    if (count != 1)
+                    {
+                        response.Result = ErrorCode.Login_Fail_Update_Inventory;
+                        
+                    }
+                    
                     return response;
                 }
                 else
@@ -75,8 +88,6 @@ public class LoginController : Controller
                 throw;
             }
         }
-        
-        return response;
         
     }
 }

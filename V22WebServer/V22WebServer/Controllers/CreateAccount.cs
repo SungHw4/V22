@@ -19,8 +19,10 @@ public class CreateAccount : Controller
     [HttpPost]
     public async Task<PkCreateAccountResponse> Post(PkCreateAccountRequest request)
     {
+        Logger.ZLogInformation($"[Request CreateAccount] ID:{request.ID}, PW:{request.PW}");
+        
         var response = new PkCreateAccountResponse {Result = ErrorCode.None};
-        Logger.ZLogInformation("");
+        
         var saltValue = Database.SaltString();
         var hashingPassword = Database.MakeHashingPassWord(saltValue, request.PW);
         var ConnectDay = DateTime.Now;
@@ -35,7 +37,7 @@ public class CreateAccount : Controller
                 userAccount.salt = saltValue;
                 
                 
-                var count = await connection.ExecuteAsync(@"INSERT Users(ID,PW,NickName, Salt) Values(@id, @pw, @nickname, @salt)", userAccount);
+                var count = await connection.ExecuteAsync(@"INSERT INTO Users(ID,PW,NickName, Salt) Values(@id, @pw, @nickname, @salt)", userAccount);
                 if(count != 1)
                 {
                     response.Result = ErrorCode.Create_Account_Fail_Duplicate;
